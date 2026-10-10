@@ -22,13 +22,15 @@ omarchy theme bg-switcher
 
 ## Wallpapers
 
-Four backgrounds are included:
+Five backgrounds are included:
 
 | Bush evening | Summer cricket |
 | --- | --- |
 | ![Bush evening](backgrounds/01-bush-evening.png) | ![Summer cricket](backgrounds/02-summer-cricket.png) |
 | Coastal road | Main street |
 | ![Coastal road](backgrounds/03-coastal-road.png) | ![Main street](backgrounds/04-main-street.png) |
+
+![Harbour study](backgrounds/05-harbour-study.png)
 
 ## Palette
 
@@ -56,6 +58,6 @@ To disable the integration, switch to another theme first, then remove only `~/.
 
 ## Artwork
 
-The bush-evening wallpaper and kangaroo silhouette were generated with OpenAI's image generation tool. The three nostalgic photographic-style wallpapers were supplied for this theme. The preview is the bush-evening wallpaper, not a desktop screenshot. Prompts are retained in `wallpaper-prompt.txt` and `branding/kangaroo-prompt.txt`; the wallpaper prompt uses the theme's final name.
+The bush-evening wallpaper and kangaroo silhouette were generated with OpenAI's image generation tool. The four nostalgic photographic-style wallpapers were supplied for this theme. The preview is the bush-evening wallpaper, not a desktop screenshot. Prompts are retained in `wallpaper-prompt.txt` and `branding/kangaroo-prompt.txt`; the wallpaper prompt uses the theme's final name.
 
 No separate licence for the artwork is declared in this repository.
