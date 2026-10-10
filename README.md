@@ -56,6 +56,28 @@ Preview with `omarchy launch about`. The source silhouette and dot art are inclu
 
 To disable the integration, switch to another theme first, then remove only `~/.config/omarchy/hooks/theme-set.d/australiana-about`.
 
+## Australiana extras
+
+The full installer also adds:
+
+- A quiet 3.2-second kookaburra welcome when switching into Australiana. Refreshing the current theme stays silent; rapid switches have a 60-second cooldown.
+- A gold kangaroo with “Gone walkabout” and “Back in a tick” above the usual lock-screen password field.
+- A gold roo beside the bar menu. It hops occasionally (every 2–5 minutes). Left-click opens wallpaper choices; right-click toggles the welcome sound. A dimmed roo means muted.
+
+The bar roo and lock decoration hide when another theme is selected. Mute persists in `~/.config/omarchy/australiana.json`. You can also control it from a terminal:
+
+```sh
+python3 ~/.config/omarchy/themes/australiana/extras/australiana.py mute
+python3 ~/.config/omarchy/themes/australiana/extras/australiana.py unmute
+omarchy bar set australiana.roo animate false
+```
+
+The sound uses PipeWire's `pw-play` and follows system volume/mute. [Recording credit](extras/sounds/CREDITS.md).
+
+The installer clones the installed Omarchy lock plugin into your user configuration and adds only a decorative component. Its authentication service is unchanged. Run the installer again after updating this repository to refresh the installed widget and hook. Theme marketplace installation only supplies palette and wallpaper assets; use the full Git clone and installer above for these extras.
+
+To remove the extras, first switch away from Australiana, disable `australiana.roo` with `omarchy plugin disable australiana.roo`, and disable your lock clone (normally `<your-username>.lock`) with `omarchy plugin disable <your-username>.lock` to restore the built-in lock screen. Remove `~/.config/omarchy/hooks/theme-set.d/australiana-extras` to stop the welcome sound hook.
+
 ## Artwork
 
 The bush-evening wallpaper and kangaroo silhouette were generated with OpenAI's image generation tool. The four nostalgic photographic-style wallpapers were supplied for this theme. The preview is the bush-evening wallpaper, not a desktop screenshot. Prompts are retained in `wallpaper-prompt.txt` and `branding/kangaroo-prompt.txt`; the wallpaper prompt uses the theme's final name.

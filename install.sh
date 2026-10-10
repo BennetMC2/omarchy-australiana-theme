@@ -8,4 +8,5 @@ if [[ "$theme_dir" != "$expected_dir" ]]; then
 fi
 command -v python3 >/dev/null
 omarchy hook install theme-set "$theme_dir/branding/australiana-about"
+python3 "$theme_dir/extras/install-extras.py"
 omarchy theme set australiana

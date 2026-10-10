@@ -1,0 +1,3 @@
+#!/bin/bash
+set -euo pipefail
+python3 "$HOME/.config/omarchy/themes/australiana/extras/australiana.py" theme "${1:-}"
