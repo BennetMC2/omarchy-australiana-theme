@@ -26,11 +26,11 @@ Five backgrounds are included:
 
 | Bush evening | Summer cricket |
 | --- | --- |
-| ![Bush evening](backgrounds/01-bush-evening.png) | ![Summer cricket](backgrounds/02-summer-cricket.png) |
+| ![Bush evening](backgrounds/01-bush-evening.webp) | ![Summer cricket](backgrounds/02-summer-cricket.webp) |
 | Coastal road | Main street |
-| ![Coastal road](backgrounds/03-coastal-road.png) | ![Main street](backgrounds/04-main-street.png) |
+| ![Coastal road](backgrounds/03-coastal-road.webp) | ![Main street](backgrounds/04-main-street.webp) |
 
-![Harbour study](backgrounds/05-harbour-study.png)
+![Harbour study](backgrounds/05-harbour-study.webp)
 
 ## Palette
 
