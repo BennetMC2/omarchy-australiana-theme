@@ -6,12 +6,13 @@ A warm, nostalgic Australian theme for Omarchy: bush-green surfaces, soft gold t
 
 ## Install
 
+Install and apply the theme using Omarchy's standard theme installer:
+
 ```sh
-git clone https://github.com/BennetMC2/omarchy-australiana-theme ~/.config/omarchy/themes/australiana
-bash ~/.config/omarchy/themes/australiana/install.sh
+omarchy theme install https://github.com/BennetMC2/omarchy-australiana-theme
 ```
 
-Installation applies the theme. Designed for Omarchy 4 / Quattro's semantic colour templates; locally checked on Omarchy 4.0.4-1.
+Designed for Omarchy 4 / Quattro's semantic colour templates. This repository contains the palette, wallpapers and icon-theme selection; no custom installer is required.
 
 To select it later or choose a wallpaper:
 
@@ -46,40 +47,23 @@ Five backgrounds are included:
 
 Omarchy generates the terminal, editor, shell and other supported application configurations from `colors.toml`. Folder icons use `Yaru-yellow`.
 
-## Kangaroo About logo
+## Optional enhancements
 
-The installer registers a theme-change hook. Selecting Australiana displays a gold kangaroo in terminal dot art; switching to another theme restores the previous About logo. Your Fastfetch configuration is preserved. Python 3 is required for the hook.
+The custom kangaroo About logo, kookaburra welcome sound, lock-screen decoration and animated bar widget are not part of this gallery theme. Their source and assets are preserved at [the last revision containing the extras](https://github.com/BennetMC2/omarchy-australiana-theme/tree/48dd9faf9dd5aa039a908837bf7df09f25b1bbc9), for possible maintenance as a separate optional extension. No separate extension release is currently provided; the historical installer is not an installation method for this version.
 
-If you already installed the palette with `omarchy theme install`, run the `install.sh` command above once to enable the kangaroo integration. Ordinary theme installation does not execute repository scripts automatically.
+### Upgrading from the old custom installer
 
-Preview with `omarchy launch about`. The source silhouette and dot art are included in `branding/`.
+If you previously ran the custom installer, clean up its user-installed integrations **before updating or reinstalling this theme**. Standard theme installation does not remove existing hooks or plugins:
 
-To disable the integration, switch to another theme first, then remove only `~/.config/omarchy/hooks/theme-set.d/australiana-about`.
+1. Switch to another installed theme first, while the old files still exist. This lets the old About hook restore your previous logo.
+2. Disable the `australiana.roo` plugin. If you enabled the decorated lock clone, disable that clone (normally `<your-username>.lock`) to restore the built-in lock screen. Use Omarchy's plugin controls; do not disable the built-in lock plugin.
+3. Remove only the old `australiana-about` and `australiana-extras` hook entries from `~/.config/omarchy/hooks/theme-set.d/`. Keep unrelated hooks and your Fastfetch configuration.
+4. Install the theme using the standard command above.
 
-## Australiana extras
-
-The full installer also adds:
-
-- A quiet 3.2-second kookaburra welcome when switching into Australiana. Refreshing the current theme stays silent; rapid switches have a 60-second cooldown.
-- A gold kangaroo with “Gone walkabout” and “Back in a tick” above the usual lock-screen password field.
-- A gold roo beside the bar menu. It hops occasionally (every 2–5 minutes). Left-click opens wallpaper choices; right-click toggles the welcome sound. A dimmed roo means muted.
-
-The bar roo and lock decoration hide when another theme is selected. Mute persists in `~/.config/omarchy/australiana.json`. You can also control it from a terminal:
-
-```sh
-python3 ~/.config/omarchy/themes/australiana/extras/australiana.py mute
-python3 ~/.config/omarchy/themes/australiana/extras/australiana.py unmute
-omarchy bar set australiana.roo animate false
-```
-
-The sound uses PipeWire's `pw-play` and follows system volume/mute. [Recording credit](extras/sounds/CREDITS.md).
-
-The installer clones the installed Omarchy lock plugin into your user configuration and adds only a decorative component. Its authentication service is unchanged. Run the installer again after updating this repository to refresh the installed widget and hook. Theme marketplace installation only supplies palette and wallpaper assets; use the full Git clone and installer above for these extras.
-
-To remove the extras, first switch away from Australiana, disable `australiana.roo` with `omarchy plugin disable australiana.roo`, and disable your lock clone (normally `<your-username>.lock`) with `omarchy plugin disable <your-username>.lock` to restore the built-in lock screen. Remove `~/.config/omarchy/hooks/theme-set.d/australiana-extras` to stop the welcome sound hook.
+Disabling the plugins leaves their copied source in your user configuration for recovery. The preserved historical README documents the old integrations. If the old files were already removed, recover them from the linked revision before performing the switch-away step.
 
 ## Artwork
 
-The bush-evening wallpaper and kangaroo silhouette were generated with OpenAI's image generation tool. The four nostalgic photographic-style wallpapers were supplied for this theme. The preview is the bush-evening wallpaper, not a desktop screenshot. Prompts are retained in `wallpaper-prompt.txt` and `branding/kangaroo-prompt.txt`; the wallpaper prompt uses the theme's final name.
+The bush-evening wallpaper was generated with OpenAI's image generation tool. The four nostalgic photographic-style wallpapers were supplied for this theme. The preview is the bush-evening wallpaper, not a desktop screenshot. The wallpaper prompt is retained in `wallpaper-prompt.txt`.
 
 No separate licence for the artwork is declared in this repository.
